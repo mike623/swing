@@ -69,7 +69,8 @@ const Stack = (config) => {
             'throwinend',
             'dragstart',
             'dragmove',
-            'dragend'
+            'dragend',
+            'tap',
         ];
 
         // Proxy Card events to the Stack.

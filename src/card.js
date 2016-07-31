@@ -97,10 +97,7 @@ const Card = (stack, targetElement) => {
             currentY = e.deltaY;
         });
         
-        eventEmitter.on('tap', (e) => {
-            eventEmitter.trigger('tap', e);
-        });
-
+      
         eventEmitter.on('panend', (e) => {
             isDraging = false;
 
@@ -156,6 +153,10 @@ const Card = (stack, targetElement) => {
 
         mc.on('panend', (e) => {
             eventEmitter.trigger('panend', e);
+        });
+
+        mc.on('tap', (e) => {
+            eventEmitter.trigger('tap', e);
         });
 
         springThrowIn.addListener({
