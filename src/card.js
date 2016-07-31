@@ -62,6 +62,9 @@ const Card = (stack, targetElement) => {
                     {
                         threshold: 2
                     }
+                ],
+                [
+                    Hammer.Tap
                 ]
             ]
         });
@@ -92,6 +95,10 @@ const Card = (stack, targetElement) => {
         eventEmitter.on('panmove', (e) => {
             currentX = e.deltaX;
             currentY = e.deltaY;
+        });
+        
+        eventEmitter.on('tap', (e) => {
+            eventEmitter.trigger('tap', e);
         });
 
         eventEmitter.on('panend', (e) => {
